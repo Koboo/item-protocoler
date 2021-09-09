@@ -22,7 +22,7 @@ public class AdapterServerSetSlot extends PacketAdapter {
     public void onPacketSending(PacketEvent event) {
         WrapperPlayServerSetSlot packet = new WrapperPlayServerSetSlot(event.getPacket());
 
-        ItemStack itemStack = EventUtil.isItemStackValid(packet.getSlotData());
+        ItemStack itemStack = EventUtil.fireItemProtocolEvent(packet.getSlotData());
         if(itemStack == null) {
             event.setCancelled(true);
         } else {

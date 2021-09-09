@@ -12,7 +12,7 @@ public class ItemProtocolEvent extends Event {
     private ItemStack itemStack;
 
     public ItemProtocolEvent(ItemStack itemStack) {
-        this.itemStack = itemStack;
+        this.itemStack = new ItemStack(itemStack);
     }
 
     public static HandlerList getHandlerList() {

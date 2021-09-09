@@ -6,7 +6,7 @@ import org.bukkit.inventory.ItemStack;
 
 public class EventUtil {
 
-  public static ItemStack isItemStackValid(ItemStack itemStack) {
+  public static ItemStack fireItemProtocolEvent(ItemStack itemStack) {
     ItemProtocolEvent protocolEvent = new ItemProtocolEvent(itemStack);
     Bukkit.getPluginManager().callEvent(protocolEvent);
     return protocolEvent.getItemStack();

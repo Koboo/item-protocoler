@@ -26,7 +26,7 @@ public class AdapterServerWindowItems extends PacketAdapter {
 
         List<ItemStack> slotDataList = new ArrayList<>();
         for(ItemStack itemStack : packet.getSlotData()) {
-            ItemStack retStack = EventUtil.isItemStackValid(itemStack);
+            ItemStack retStack = EventUtil.fireItemProtocolEvent(itemStack);
             if(retStack != null) {
                 slotDataList.add(retStack);
             }

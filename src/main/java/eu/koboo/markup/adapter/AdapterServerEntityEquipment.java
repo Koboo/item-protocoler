@@ -22,7 +22,7 @@ public class AdapterServerEntityEquipment extends PacketAdapter {
     public void onPacketSending(PacketEvent event) {
         WrapperPlayServerEntityEquipment packet = new WrapperPlayServerEntityEquipment(event.getPacket());
 
-        ItemStack itemStack = EventUtil.isItemStackValid(packet.getItem());
+        ItemStack itemStack = EventUtil.fireItemProtocolEvent(packet.getItem());
         if(itemStack == null) {
             event.setCancelled(true);
         } else {
