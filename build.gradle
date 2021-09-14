@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'maven-publish'
 }
 
 group 'eu.koboo'
@@ -9,31 +8,20 @@ version '0.1'
 repositories {
     mavenCentral()
     maven {
-        url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots'
-    }
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots'
-    }
-    maven {
         url 'https://repo.dmulloy2.net/repository/public/'
+    }
+    flatDir {
+        dir 'libs'
     }
 }
 
 dependencies {
-    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
-    compileOnly 'com.comphenix.protocol:ProtocolLib:4.7.0'
+    implementation name: 'spigot'
+    implementation 'com.comphenix.protocol:ProtocolLib:4.7.0'
 }
 
 compileJava {
     options.encoding = 'UTF-8'
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
-}
-
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from components.java
-        }
-    }
+    sourceCompatibility = '16'
+    targetCompatibility = '16'
 }

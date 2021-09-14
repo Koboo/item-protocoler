@@ -1,6 +1,6 @@
 name: ItemProtocoler
 version: 0.1
 author: Koboo
-main: eu.koboo.itemprotocoler.ItemProtocoler
+main: eu.koboo.itemprotocol.ItemProtocol
 depend: [ ProtocolLib ]
 commands:
