@@ -1,6 +1,10 @@
 # ItemProtocoler 
 
-This is a proof-of-concept to accomplish automatic localization of ItemStack names via packet manipulation by ProtocolLib.
+This is a proof-of-concept of server-side changes to ItemStacks being played out client-side. Further information can be found below.
+
+Changes, improvements, adaptations and additions are welcome via [pull request](https://github.com/Koboo/item-protocoler/pulls)! 
+
+#### I am grateful for every contribution!
 
 ## Overview 
 
