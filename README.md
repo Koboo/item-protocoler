@@ -13,6 +13,8 @@ This is the overview of the documentation
 
 ## Use-Cases
 
+Due to the immense number of changes that take place in the individual packets that affect item or inventory changes, developers should explicitly consider in advance whether and to what scope the use of this procedure makes sense.
+
 * Localization of `ItemStack` names
 * Control of corrupt `ItemStack`s
 * `Player`-based modification of `ItemStack`s
