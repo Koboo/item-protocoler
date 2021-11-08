@@ -29,13 +29,16 @@ Using this method yields both pro and con arguments. Some of these are listed be
 
 #### Pro
 
-* Central localization of `ItemStack` names by `ItemProtocolEvent`
+* Central query point of all `ItemStack`s that are sent to clients.
+* Easy modification of the created `ItemStack`s.
 
 #### Contra
 
-* Overhead creation through newly created `ItemStack` objects
+* Overhead creation through newly cloned `ItemStack` objects.
 
 ## Usage
+
+The `ItemProtocolEvent` follows the regular `Bukkit` event-api and can also be intercepted via it. An example `Listener` might look like the following:
 
 ```java
 public class ItemProtocolListener implements Listener {
