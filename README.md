@@ -10,6 +10,7 @@ This is the overview of the documentation
 * [Evaluation](#evaluation) (Does it make sense to use it?)
 * [Usage](#usage) (How is it used?)
 * [Packets](#packets) (Which packets are intercepted?)
+* [Dependencies](#dependencies) (Which external libraries are used?)
 
 
 ## Use-Cases
@@ -54,6 +55,10 @@ public class ItemProtocolListener implements Listener {
 }
 ```
 
+From an `ItemProtocolEvent` both the `Player` and the original `ItemStack` can be fetched. If the original `ItemStack` is changed, it should be noted that it may also be changed on the server-side. To make only client-side changes, the cloned `ItemStack` is provided.
+
+It should also be noted that a new clone is created when the cloned `ItemStack` method is called, and not when the event is initialized.
+
 ## Packets
 
 Currently the following packets are intercepted and can be retrieved as `ItemProtocolEvent`.
@@ -63,3 +68,11 @@ Currently the following packets are intercepted and can be retrieved as `ItemPro
 * `WrapperPlayServerWindowItems`
 
 These are the only packets that are sent from the server-to-client. In the scenario it is currently assumed that the client does not create any `ItemStack`s via `GameMode.CREATIVE`. This would require that further client-to-server packets would have to be intercepted via `PacketAdapter`.
+
+## Dependencies
+
+This proof-of-concept uses the `ProtocolLib` library and additionally some classes of the official `PacketWrapper` library. For more information, please refer to the documentation of the respective library.
+
+* [ProtocolLib](https://www.spigotmc.org/resources/protocollib.1997/)
+* [PacketWrapper](https://github.com/dmulloy2/PacketWrapper)
+
