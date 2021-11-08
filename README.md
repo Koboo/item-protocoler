@@ -2,9 +2,9 @@
 
 This is a proof-of-concept of server-side changes to ItemStacks being played out client-side. Further information can be found below.
 
-Changes, improvements, adaptations and additions are welcome via [pull request](https://github.com/Koboo/item-protocoler/pulls)! 
+Changes, improvements, contributions and additions are welcome via [pull request](https://github.com/Koboo/item-protocoler/pulls)! 
 
-#### I am grateful for every contribution!
+#### I am thankful to every contributor!
 
 ## Overview 
 
