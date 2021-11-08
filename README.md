@@ -9,6 +9,7 @@ This is the overview of the documentation
 * [Use-Cases](#use-cases) (What could it be used for?)
 * [Evaluation](#evaluation) (Does it make sense to use it?)
 * [Usage](#usage) (How is it used?)
+* [Packets](#packets) (Which packets are intercepted?)
 
 
 ## Use-Cases
@@ -33,7 +34,6 @@ Using this method yields both pro and con arguments. Some of these are listed be
 
 * Overhead creation through newly created `ItemStack` objects
 
-
 ## Usage
 
 ```java
@@ -53,3 +53,13 @@ public class ItemProtocolListener implements Listener {
 
 }
 ```
+
+## Packets
+
+Currently the following packets are intercepted and can be retrieved as `ItemProtocolEvent`.
+
+* `WrapperPlayServerEntityEquipment`
+* `WrapperPlayServerSetSlot`
+* `WrapperPlayServerWindowItems`
+
+These are the only packets that are sent from the server-to-client. In the scenario it is currently assumed that the client does not create any `ItemStack`s via `GameMode.CREATIVE`. This would require that further client-to-server packets would have to be intercepted via `PacketAdapter`.
