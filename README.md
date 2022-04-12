@@ -74,7 +74,7 @@ Currently the following packets are intercepted and can be retrieved as `ItemPro
 * `WrapperPlayServerSetSlot`
 * `WrapperPlayServerWindowItems`
 
-These are the only packets that are sent from the server-to-client. In the scenario it is currently assumed that the client does not create any `ItemStack`s via `GameMode.CREATIVE`. This would require that further client-to-server packets would have to be intercepted via `PacketAdapter`.
+These are the only `ItemStack`-related packets that are sent from the server-to-client. In the current scenario it is assumed that the client does not create any `ItemStack` objects through `GameMode.CREATIVE`. This would require that further client-to-server packets would have to be intercepted via `PacketAdapter`.
 
 ## Dependencies
 
